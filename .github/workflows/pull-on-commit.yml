@@ -1,0 +1,17 @@
+name: Pull on Commit
+
+on:
+  push:
+    branches:
+      - main  # Change this to your branch name
+
+jobs:
+  pull-changes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Pull changes
+        run: git pull origin main  # Change 'main' to your branch name
